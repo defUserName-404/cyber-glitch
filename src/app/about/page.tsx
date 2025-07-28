@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-export default function Home() {
+export default function About() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-center px-4">
       <motion.h1
@@ -11,24 +11,16 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="text-6xl font-bold mb-4 animate-glow"
       >
-        Welcome to the Cyber-Glitch
+        About the Architect
       </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="text-xl mb-8"
+        className="text-xl mb-8 max-w-2xl"
       >
-        A journey into the digital frontier.
+        In the neon-drenched alleys of the digital realm, I am a data alchemist, forging code into reality. My neural network is wired for innovation, constantly seeking new algorithms to unravel the complexities of the cyber-verse. I thrive on the hum of processors and the glow of monitors, crafting solutions that bridge the gap between the tangible and the virtual.
       </motion.p>
-      <motion.button
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        className="px-8 py-3 bg-accent text-primary rounded-full text-lg font-semibold hover:bg-secondary transition-colors duration-300 border-2 border-accent hover:border-secondary"
-      >
-        Enter
-      </motion.button>
     </div>
   );
 }
