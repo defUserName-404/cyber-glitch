@@ -1,33 +1,44 @@
-"use client";
+'use client'
 
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
-export default function Contact() {
+const ContactPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center px-4">
+    <div className="min-h-screen bg-cyber-darker text-white p-8">
       <motion.h1
-        initial={{ opacity: 0, y: -50 }}
+        className="text-4xl font-bold text-center mb-8"
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-6xl font-bold mb-4 animate-glow"
+        transition={{ duration: 0.5 }}
       >
-        Connect in the Network
+        Contact Me
       </motion.h1>
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        className="max-w-lg mx-auto"
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="text-xl mb-8 max-w-2xl"
+        transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <p className="mb-4">Do you seek to interface? To collaborate on a new digital frontier? Or perhaps to simply exchange data packets?</p>
-        <p className="mb-4">You can reach me through the following channels:</p>
-        <ul className="list-none space-y-2">
-          <li><a href="mailto:contact@cyberglitch.com" className="hover:text-accent transition-colors duration-300">Email: contact@cyberglitch.com</a></li>
-          <li><a href="https://twitter.com/cyberglitch" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">Twitter: @cyberglitch</a></li>
-          <li><a href="https://github.com/cyberglitch" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">GitHub: /cyberglitch</a></li>
-        </ul>
-        <p className="mt-8">Let&apos;s hack the future, together.</p>
+        <form className="bg-cyber-dark p-8 rounded-lg">
+          <div className="mb-4">
+            <label htmlFor="name" className="block text-lg font-semibold mb-2">Name</label>
+            <input type="text" id="name" className="w-full bg-cyber-darker border border-cyber-blue p-2 rounded" />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-lg font-semibold mb-2">Email</label>
+            <input type="email" id="email" className="w-full bg-cyber-darker border border-cyber-blue p-2 rounded" />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="message" className="block text-lg font-semibold mb-2">Message</label>
+            <textarea id="message" rows={4} className="w-full bg-cyber-darker border border-cyber-blue p-2 rounded"></textarea>
+          </div>
+          <button type="submit" className="bg-cyber-blue text-white font-bold py-2 px-4 rounded hover:bg-cyber-blue-dark transition-colors">
+            Send Message
+          </button>
+        </form>
       </motion.div>
     </div>
-  );
+  )
 }
+
+export default ContactPage

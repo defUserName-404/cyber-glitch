@@ -1,29 +1,29 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Layout from "@/components/Layout";
-import StarsCanvas from "@/components/Starfield";
-import GlowingGlyphs from "@/components/GlowingGlyphs";
-
-const inter = Inter({ subsets: ["latin"] });
+import type { Metadata } from 'next'
+import Navbar from '../components/Navbar'
+import ParticleBackground from '../components/ParticleBackground'
+import Footer from '../components/Footer'
+import './globals.css'
 
 export const metadata: Metadata = {
-  title: "Cyberpunk Portfolio",
-  description: "A cyberpunk themed portfolio",
-};
+  title: 'Cyberpunk Portfolio',
+  description: 'A futuristic cyberpunk-themed portfolio',
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <StarsCanvas />
-        <GlowingGlyphs />
-        <Layout>{children}</Layout>
+    <html lang="en" className="scroll-smooth">
+      <body className="bg-cyber-darker text-white">
+        <ParticleBackground />
+        <Navbar />
+        <main className="relative z-10">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
-  );
+  )
 }

@@ -1,26 +1,36 @@
-"use client";
+'use client'
 
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
-export default function About() {
+const AboutPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center px-4">
+    <div className="min-h-screen bg-cyber-darker text-white p-8">
       <motion.h1
-        initial={{ opacity: 0, y: -50 }}
+        className="text-4xl font-bold text-center mb-8"
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-6xl font-bold mb-4 animate-glow"
+        transition={{ duration: 0.5 }}
       >
-        About the Architect
+        About Me
       </motion.h1>
-      <motion.p
-        initial={{ opacity: 0, y: 50 }}
+      <motion.div
+        className="max-w-4xl mx-auto"
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="text-xl mb-8 max-w-2xl"
+        transition={{ duration: 0.5, delay: 0.2 }}
       >
-        In the neon-drenched alleys of the digital realm, I am a data alchemist, forging code into reality. My neural network is wired for innovation, constantly seeking new algorithms to unravel the complexities of the cyber-verse. I thrive on the hum of processors and the glow of monitors, crafting solutions that bridge the gap between the tangible and the virtual.
-      </motion.p>
+        <p className="text-lg mb-4">
+          I am a passionate and creative full-stack developer with a love for building beautiful and functional web applications. I have a strong background in both front-end and back-end technologies, and I am always eager to learn new things.
+        </p>
+        <p className="text-lg mb-4">
+          My journey into the world of programming started with a fascination for video games and a desire to understand how they were made. This led me to learn C++ and eventually to the world of web development. I am proficient in JavaScript, React, Node.js, and have experience with various other technologies.
+        </p>
+        <p className="text-lg">
+          When I am not coding, I enjoy playing guitar, reading sci-fi novels, and exploring the great outdoors.
+        </p>
+      </motion.div>
     </div>
-  );
+  )
 }
+
+export default AboutPage
